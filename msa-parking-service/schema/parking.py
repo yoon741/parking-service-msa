@@ -9,7 +9,7 @@ class ParkingBase(BaseModel):
 class InParking(ParkingBase):
     pno: int
     intime: datetime
-    barrier: bool
+    barrier: str
 
     class Config:
         from_attribute=True

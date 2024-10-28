@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from routes import parking
 from service.database import create_tables
+from service.parking import create_triggers
 
 app = FastAPI()
 
@@ -24,5 +25,6 @@ app.add_middleware(
 
 if __name__ == '__main__':
     create_tables()
+    create_triggers()
     uvicorn.run('main:app', port=8000, reload=True)
 
