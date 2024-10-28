@@ -35,6 +35,7 @@ def create_triggers():
             BEGIN
                 IF OLD.paydate IS NULL AND NEW.paydate IS NOT NULL THEN
                     DELETE FROM parkseat WHERE carnum = NEW.carnum;
+                END IF;
             END;
             """
             connection.execute(text(trigger_sql_payment))
